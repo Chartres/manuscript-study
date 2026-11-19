@@ -1,0 +1,22 @@
+X:1
+T:Hymna
+C:Dr. Zoltán Rényi
+M:C
+L:1/8
+Q:1/4=60
+%%score {RH LH}
+V:RH clef=treble
+V:LH clef=bass
+K:A
+% p4 s2
+[V:RH] "^Lento"E2 A3/2G/ B2 A2 & C2 D2 E4 | c3/2A/ E^D =D2 F2 & C3 ^D =D2 =D2 | B2 B3/2^A/ c2 B2 & E2 ^D2 =D4 | G3/2B/ GF F2 E2 & =D2 ^D2- ^D2 E2 |
+[V:LH] A,4 A,4 & A,,2 B,,2 C,4 | A,2 z G, F,4 & A,,4 D,2 B,,2 | G,2 z G, ^G,4 & E,4 E,4 | F,2 A,2- A,2 G,2 & B,,4 E,4 |
+% ? p4 s2 b2: alto C#4 written as half note but the D#4 on beat 2.5 also carries a down-stem; read as C#4 dotted quarter + D#4 eighth
+% ? p4 s2 b2-b3: tenor "z G," - glyph between beats read as eighth rest (could be a natural on G; no natural read, so G#3 from key)
+% ? p4 s2 b3: alto half note on beat 3 read as D natural (E7 chord); strictly the D# from beat 2 would carry
+% ? p4 s2 b4: sop beat 3 between F#4/G#4, read F#4; alto beat 4 not written, held as E4 with the soprano
+% p4 s3
+[V:RH] A2 A3/2G/ B2 A2 & C2 D2 E4 | c3/2A/ E^D =D2 F2 & C4 =D4 | B2 B3/2^A/ c2 B2 & =D2 C2 =D4 | G3/2E/ FG B2 A2 & B,2 E^D =D2 C2 |]
+[V:LH] A,4 A,4 & A,,2 B,,2 C,4 | A,2 G,2 F,2 A,2 & A,,4 D,4 | G,2 G,2 G,4 & E,4 E,4 | G,2 A,F, G,2 A,2 & E,2 D,B,, E,,2 A,,2 |]
+% ? p4 s3 b4: LH beat 2 drawn without flags; read as eighths (A3/F#3 over D3/B2) so the bar adds up
+% ? p4 s3 b4: bass beat 3 note on a ledger read as E2 (detector put it near D2)

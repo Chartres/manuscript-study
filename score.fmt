@@ -1,0 +1,12 @@
+% abcm2ps format for the published transcriptions
+pageheight 29.7cm
+pagewidth 21cm
+topmargin 1.5cm
+botmargin 1.5cm
+leftmargin 1.6cm
+rightmargin 1.6cm
+scale 0.72
+titlefont Times-Roman 22
+composerfont Times-Italic 13
+measurefont Times-Italic 9
+footer "Prepis z rukopisu · strana $P"

@@ -1,0 +1,38 @@
+{
+  "name": "Manuscript study",
+  "slug": "manuscript-study",
+  "one_liner": "Turn a scan of handwritten or old sheet music into a study: transcription, piano recording, and the original and transcription playing bar by bar, doubts marked.",
+  "platform": "library",
+  "track": "community",
+  "template": "library-skill",
+  "stack": "Claude Code skill; ABC + abc2midi + fluidsynth; abcjs static page",
+  "deploy_target": "public GitHub repo + CF Pages per study",
+  "stage": "discovery",
+  "stage_entered": "2026-11-19",
+  "stage_confidence": "confirmed",
+  "kill_criteria": {
+    "statement": "Discovery: KILL if by the deadline no person outside Pavol's family who holds a handwritten manuscript (and Claude Code, or a relative with it) agrees to try the skill on it.",
+    "deadline": "2026-11-28",
+    "locked": true
+  },
+  "kpi_source": "none",
+  "north_star": null,
+  "links": {
+    "repo": "https://github.com/Chartres/manuscript-study"
+  },
+  "decisions": [
+    {
+      "date": "2026-11-19",
+      "gate": "triage",
+      "choice": "ADVANCE",
+      "rationale": "Channel named (MetaFilter, MuseScore forum, Fiddlerman posts on hearing handwritten music); landscape finds no tool aligning original bars with a transcription and doubts. Pavol: advance + publish probe."
+    }
+  ],
+  "tags": [
+    "music",
+    "omr",
+    "skill",
+    "family"
+  ],
+  "notes": "Prototype: renyi.pages.dev (repo ~/my-git/renyi), built 2026-11-19. Form chosen by Pavol 2026-11-19: open-source skill + template, $0 infra, no API calls. Probe approved 2026-11-19: open-source the pipeline, stage a post for r/ClaudeAI / Show HN; Pavol sends."
+}

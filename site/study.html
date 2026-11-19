@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manuscript study</title>
+<style>
+  :root {
+    --paper: oklch(0.975 0.012 85); --grid: oklch(0.84 0.03 235 / .45);
+    --ink: oklch(0.34 0.14 268); --pencil: oklch(0.45 0.02 260); --text: oklch(0.24 0.02 260);
+    --doubt: oklch(0.86 0.15 85); --doubt-ink: oklch(0.5 0.13 65);
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--text); font: 17px/1.55 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    background-color: var(--paper);
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 19px 19px; }
+  main { max-width: 980px; margin: 0 auto; padding: 0 18px 64px; }
+  a { color: var(--ink); text-underline-offset: 3px; }
+
+  .hlavicka { position: sticky; top: 0; z-index: 5; background: var(--paper); padding: 14px 0 10px; border-bottom: 1.5px solid var(--ink); }
+  .riadok1 { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .riadok1 img { height: 40px; width: auto; }
+  .spat { font-size: .9rem; }
+  .hraj { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+  .hraj button { flex: none; width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--ink); background: var(--paper); color: var(--ink); cursor: pointer; display: grid; place-items: center; padding: 0; }
+  .hraj button svg { width: 18px; height: 18px; fill: currentColor; }
+  .hraj input { flex: 1; appearance: none; -webkit-appearance: none; background: transparent; height: 24px; margin: 0; cursor: pointer; }
+  .hraj input::-webkit-slider-runnable-track { height: 2px; background: var(--ink); }
+  .hraj input::-moz-range-track { height: 2px; background: var(--ink); }
+  .hraj input::-webkit-slider-thumb { -webkit-appearance: none; width: 15px; height: 11px; border-radius: 50%; background: var(--ink); margin-top: -4.5px; transform: rotate(-22deg); }
+  .hraj input::-moz-range-thumb { width: 15px; height: 11px; border: 0; border-radius: 50%; background: var(--ink); }
+  .hraj time { font-variant-numeric: tabular-nums; color: var(--pencil); font-size: .85rem; min-width: 7.5em; text-align: right; }
+
+  .uvod { color: var(--pencil); font-size: .92rem; margin: 18px 0 0; max-width: 46em; }
+  .legenda { display: inline-block; width: 1.1em; height: .8em; vertical-align: -1px; border-radius: 2px; }
+  .legenda.p { background: var(--doubt); }
+  .legenda.t { border: 2px solid var(--ink); }
+
+  .system { margin-top: 34px; }
+  .kde { font-size: .82rem; color: var(--pencil); margin: 0 0 4px; }
+  .par { position: relative; }
+  .sken { position: relative; width: 100%; background: white; box-shadow: 0 1px 0 var(--grid); }
+  .sken.zarovnane { background: transparent; }
+  .sken.zarovnane .rez { position: absolute; top: 0; height: 100%; background-repeat: no-repeat; background-color: white; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .takty { position: absolute; inset: 0; pointer-events: none; }
+  .takty .takt { top: 0; bottom: 0; pointer-events: auto; border-left: 1px dashed color-mix(in oklch, var(--pencil) 35%, transparent); border-radius: 0; }
+  .sken img { display: block; width: 100%; height: auto; }
+  .takt { position: absolute; top: 4%; bottom: 4%; cursor: pointer; border-radius: 3px; }
+  .takt:hover { outline: 1.5px dashed var(--ink); }
+  .takt.pochyba { background: color-mix(in oklch, var(--doubt) 38%, transparent); }
+  .takt.pochyba::after { content: "?"; position: absolute; top: -2px; left: 4px; font: 700 .85rem/1 Georgia, serif; color: var(--doubt-ink); }
+  .takt.teraz { outline: 3px solid var(--ink); outline-offset: -1px; background: color-mix(in oklch, var(--ink) 11%, transparent); z-index: 1; }
+  .takt.teraz::before { content: ""; position: absolute; left: 0; right: 0; bottom: -7px; height: 4px; background: var(--ink); }
+  .prepis { margin-top: 2px; }
+  .prepis svg { display: block; }
+  .prepis .pochyba { fill: var(--doubt-ink); }
+  .prepis .hra { fill: var(--ink); stroke: var(--ink); }
+  .prepis svg path, .prepis svg text { transition: fill .1s; }
+  .poznamky { list-style: none; padding: 0; margin: 6px 0 0; font-size: .9rem; }
+  .poznamky li { margin: 4px 0; padding-left: 8px; border-left: 3px solid var(--doubt); }
+  .poznamky button { font: inherit; color: var(--ink); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+  .chyba { margin-top: 40px; font-size: .95rem; }
+  footer { margin-top: 40px; }
+  footer img { width: 100px; height: auto; }
+  @media (max-width: 600px) { .hraj time { min-width: 0; font-size: .78rem; } .riadok1 img { height: 30px; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="hlavicka">
+    <div class="riadok1"><a class="spat" href="./" data-t="back"></a><span id="nazov"></span></div>
+    <div class="hraj" id="hraj">
+      <button type="button"></button><input type="range" min="0" max="1000" value="0"><time>0:00</time>
+    </div>
+  </div>
+  <p class="uvod" data-t="intro"></p>
+  <div id="systemy"></div>
+  <p class="chyba" id="chyba" hidden></p>
+  <footer id="paticka"></footer>
+</main>
+<script src="lib/abcjs-basic-min.js"></script>
+<script>
+const T = {
+  en: { back: '← All pieces', play: 'Play', pause: 'Pause', pos: 'Position', page: 'Page', line: 'line', bars: 'bars', bar: 'Bar',
+    scan: 'Manuscript', title: 'manuscript and transcription',
+    intro: 'Each line of the manuscript sits above the transcription of the same line, bar over bar (the manuscript bars are stretched a little to line up). While it plays, <span class="legenda t"></span> a box moves from bar to bar. <span class="legenda p"></span> Yellow bars are places where the handwriting was hard to read and the note is a guess; the reason is under the line. Click a bar to jump there.',
+    report: 'Something wrong? <a href="{url}">Tell us</a>: the page, line and bar are enough.' },
+  sk: { back: '← Všetky skladby', play: 'Prehrať', pause: 'Pozastaviť', pos: 'Pozícia', page: 'Strana', line: 'riadok', bars: 'takty', bar: 'Takt',
+    scan: 'Rukopis', title: 'rukopis a prepis',
+    intro: 'Hore je rukopis, pod ním prepis toho istého riadku, takt pod taktom (takty rukopisu sú kvôli tomu trochu roztiahnuté alebo stiahnuté). Počas hrania sa <span class="legenda t"></span> rámik posúva po taktoch. <span class="legenda p"></span> Žlté takty sú miesta, kde bol rukopis ťažko čitateľný a tón je odhadnutý; vysvetlenie je pod riadkom. Kliknutím na takt sa nahrávka presunie naň.',
+    report: 'Nesedí niečo? <a href="{url}">Napíšte nám</a>, stačí strana, riadok a takt.' },
+};
+const slug = new URLSearchParams(location.search).get('k');
+let t = T.en;
+const meta = fetch('data/study.json').then(r => r.json()).then(m => {
+  t = T[m.lang] || T.en; document.documentElement.lang = m.lang || 'en';
+  const piece = m.pieces.find(p => p.slug === slug); if (!piece) { location.replace('./'); return; }
+  document.title = `${piece.title} — ${t.title}`;
+  document.getElementById('nazov').innerHTML = `<em style="color:var(--ink);font-size:1.4rem"></em>`;
+  document.querySelector('#nazov em').textContent = piece.title;
+  document.querySelectorAll('[data-t]').forEach(el => { el.innerHTML = t[el.dataset.t]; });
+  btn.setAttribute('aria-label', t.play); bar.setAttribute('aria-label', t.pos);
+  if (m.feedback_url) { const c = document.getElementById('chyba'); c.innerHTML = t.report.replace('{url}', m.feedback_url); c.hidden = false; }
+  if (m.footer) document.getElementById('paticka').innerHTML = m.footer;
+  return m;
+});
+
+// Pages ignores Range requests, so a streamed MP3 cannot seek; load it whole and play from memory
+const audio = new Audio();
+const loaded = fetch(`audio/${slug}.mp3`).then(r => r.blob()).then(b => { audio.src = URL.createObjectURL(b); });
+const ICON = { play: '<svg viewBox="0 0 18 18"><path d="M5 3 L15 9 L5 15 Z"/></svg>', pause: '<svg viewBox="0 0 18 18"><rect x="4" y="3" width="3.5" height="12"/><rect x="10.5" y="3" width="3.5" height="12"/></svg>' };
+const fmt = s => isFinite(s) ? `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}` : '–:––';
+const [btn, bar, time] = document.getElementById('hraj').children;
+btn.innerHTML = ICON.play;
+btn.onclick = () => loaded.then(() => audio.paused ? audio.play() : audio.pause());
+audio.onplay = () => { btn.innerHTML = ICON.pause; btn.setAttribute('aria-label', t.pause); tick(); };
+audio.onpause = audio.onended = () => { btn.innerHTML = ICON.play; btn.setAttribute('aria-label', t.play); };
+bar.oninput = () => { if (audio.duration) { audio.currentTime = bar.value / 1000 * audio.duration; show(); } };
+
+let events = [], lineStart = [], boxes = [], current = null;
+
+Promise.all([fetch(`data/${slug}.json`).then(r => r.json()), fetch(`data/${slug}.abc`).then(r => r.text()), meta]).then(([data, abc]) => {
+  const root = document.getElementById('systemy');
+  let n = 0;
+  data.systems.forEach((s, i) => {
+    lineStart[i] = n; n += s.bars.length - 1;
+    const sec = document.createElement('section'); sec.className = 'system'; sec.id = `r${i + 1}`;
+    sec.innerHTML = `<p class="kde">${t.page} ${s.page}, ${t.line} ${s.system} · ${t.bars} ${lineStart[i] + 1}–${n}</p>
+      <div class="par"><div class="sken"><img src="${s.img}" alt="${t.scan}, ${t.page} ${s.page}, ${t.line} ${s.system}" style="aspect-ratio:${s.aspect}"></div>
+      <div class="prepis"></div><div class="takty"></div></div><ul class="poznamky"></ul>`;
+    root.appendChild(sec);
+  });
+
+  // render the transcription one SVG per line; line i sits under scan strip i
+  const clean = abc.replace(/^[TC]:.*\n/mg, '');  // drop the lines whole: a blank line would end the tune
+  const hidden = document.createElement('div');
+  hidden.style.cssText = 'position:absolute;left:-10000px;top:0;width:940px';  // abcjs measures text, so it must be in the page
+  document.body.appendChild(hidden);
+  const tune = ABCJS.renderAbc(hidden, clean, { add_classes: true, oneSvgPerLine: true, responsive: 'resize', staffwidth: 940, paddingleft: 0, paddingright: 0 })[0];
+  [...hidden.children].forEach(el => {
+    const note = el.querySelector('[class*="abcjs-l"]');
+    const m = note && note.getAttribute('class').match(/abcjs-l(\d+)/);
+    const sec = m && document.getElementById(`r${+m[1] + 1}`);
+    if (sec) sec.querySelector('.prepis').appendChild(el);
+  });
+  hidden.remove();
+
+  // Align: each manuscript bar is cut out and stretched to the width of its transcribed bar, so the
+  // two sit one above the other; one box per bar then spans both. Lines whose barlines cannot be
+  // matched keep the plain strip and get boxes on the scan only.
+  data.systems.forEach((s, i) => {
+    const sec = document.getElementById(`r${i + 1}`), sken = sec.querySelector('.sken');
+    const tx = transcribedBars(sec.querySelector('.prepis svg'), s.bars.length - 1);
+    const holder = tx ? sec.querySelector('.takty') : sken;
+    const edges = tx || s.bars;
+    if (tx) {
+      const a0 = s.bars[0], a1 = s.bars.at(-1);
+      sken.classList.add('zarovnane');
+      sken.style.aspectRatio = s.aspect / ((tx.at(-1) - tx[0]) / (a1 - a0));
+      sken.innerHTML = s.bars.slice(0, -1).map((a, k) => {
+        const b = s.bars[k + 1], w = b - a;
+        return `<div class="rez" style="left:${tx[k] * 100}%;width:${(tx[k + 1] - tx[k]) * 100}%;background-image:url(${s.img});background-size:${100 / w}% 100%;background-position:${a / (1 - w) * 100}% 0"></div>`;
+      }).join('') + `<span class="sr">${t.scan}, ${t.page} ${s.page}, ${t.line} ${s.system}</span>`;
+    }
+    boxes[i] = edges.slice(0, -1).map((x, k) => {
+      const b = document.createElement('div'); b.className = 'takt';
+      b.style.left = `${x * 100}%`; b.style.width = `${(edges[k + 1] - x) * 100}%`;
+      b.title = `${t.bar} ${lineStart[i] + k + 1}`;
+      b.onclick = () => seek(i, k);
+      holder.appendChild(b); return b;
+    });
+  });
+
+  data.doubts.forEach(d => {
+    const sec = document.getElementById(`r${d.line + 1}`); if (!sec) return;
+    d.bars.forEach(k => {
+      boxes[d.line][k]?.classList.add('pochyba');
+      sec.querySelectorAll(`.prepis .abcjs-l${d.line}.abcjs-m${k}`).forEach(el => el.classList.add('pochyba'));
+    });
+    const li = document.createElement('li');
+    const label = d.bars.length ? d.bars.map(k => lineStart[d.line] + k + 1).join(', ') : '';
+    li.innerHTML = label ? `<button type="button">${t.bar} ${label}</button>: ` : '';
+    li.append(d.note);
+    if (label) li.querySelector('button').onclick = () => seek(d.line, d.bars[0]);
+    sec.querySelector('.poznamky').appendChild(li);
+  });
+
+  const tc = new ABCJS.TimingCallbacks(tune, {});
+  events = tc.noteTimings.filter(e => e.type === 'event').map(e => ({ ms: e.milliseconds, line: e.line, k: e.measureNumber - lineStart[e.line] }));
+  // #t=SECONDS opens the page at that moment (for pointing someone at a spot)
+  const t0 = parseFloat((location.hash.match(/t=([\d.]+)/) || [])[1]);
+  if (t0 >= 0) loaded.then(() => audio.addEventListener('loadedmetadata', () => { audio.currentTime = t0; show(); document.querySelector('.takt.teraz')?.closest('.system').scrollIntoView(); }, { once: true }));
+}).catch(e => { console.error(e); document.getElementById("systemy").textContent = "Error: " + e.message; });
+
+function transcribedBars(svg, n) {
+  // x of the staff's left end and of each barline, as fractions of the SVG width; null unless exactly n bars
+  if (!svg) return null;
+  const W = svg.viewBox.baseVal.width; if (!W) return null;
+  const xs = [...svg.querySelectorAll('.abcjs-bar.abcjs-v0')].map(e => { const b = e.getBBox(); return b.x + b.width; }).sort((a, b) => a - b)
+    .filter((x, j, a) => j === 0 || x - a[j - 1] > 4);
+  const staff = [...svg.querySelectorAll('.abcjs-staff')].map(e => e.getBBox().x);
+  if (xs.length !== n || !staff.length) return null;
+  return [Math.min(...staff), ...xs].map(x => x / W);
+}
+function seek(line, k) {
+  const e = events.find(e => e.line === line && e.k === k); if (!e) return;
+  loaded.then(() => { audio.currentTime = e.ms / 1000 + 0.01; if (audio.paused) audio.play(); else show(); });
+}
+function at(ms) { // last event at or before ms
+  let lo = 0, hi = events.length - 1, r = -1;
+  while (lo <= hi) { const mid = (lo + hi) >> 1; if (events[mid].ms <= ms) { r = mid; lo = mid + 1; } else hi = mid - 1; }
+  return r < 0 ? null : events[r];
+}
+function show() {
+  bar.value = audio.duration ? audio.currentTime / audio.duration * 1000 : 0;
+  time.textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration)}`;
+  const e = at(audio.currentTime * 1000);
+  const key = e ? `${e.line}:${e.k}` : null;
+  if (key === current) return;
+  document.querySelectorAll('.takt.teraz').forEach(b => b.classList.remove('teraz'));
+  document.querySelectorAll('.prepis .hra').forEach(el => el.classList.remove('hra'));
+  const lineChanged = !current || !e || current.split(':')[0] !== String(e.line);
+  current = key; if (!e) return;
+  boxes[e.line]?.[e.k]?.classList.add('teraz');
+  document.querySelectorAll(`#r${e.line + 1} .prepis .abcjs-l${e.line}.abcjs-m${e.k}`).forEach(el => el.classList.add('hra'));
+  if (lineChanged && !audio.paused) {
+    const sec = document.getElementById(`r${e.line + 1}`), r = sec.getBoundingClientRect();
+    const top = document.querySelector('.hlavicka').offsetHeight;
+    if (r.top < top || r.bottom > innerHeight) window.scrollTo({ top: scrollY + r.top - top - 12, behavior: 'smooth' });
+  }
+}
+function tick() { show(); if (!audio.paused) requestAnimationFrame(tick); }
+audio.ontimeupdate = audio.onloadedmetadata = show;
+</script>
+</body>
+</html>

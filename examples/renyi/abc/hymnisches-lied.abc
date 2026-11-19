@@ -1,0 +1,27 @@
+X:1
+T:Hymnisches Lied
+C:Dr. Zoltán Rényi
+M:2/4
+L:1/8
+Q:1/4=72
+%%score {RH LH}
+V:RH clef=treble
+V:LH clef=bass
+K:G
+% p4 s4 (treble shows one sharp; bass staff has no key signature in the scan, F# kept by harmony)
+[V:RH] "^Maestoso"[B,D]2 [DG]3/2[CF]/ | [DFA]2 [B,DG]2 | [DGB]3/2[B,G]/ [B,D]3/2^C/ | [A,C]2 [A,CE]2 | !mf![CEA]2 [CEA]3/2[B,D^G]/ | [DEB]2 [CEA]2 |
+[V:LH] [G,,G,]2 [D,,D,]3/2[C,,C,]/ | [F,,F,]2 [G,,G,]2 | [G,,G,]3/2[G,,D,]/ [D,,D,]2 | [A,,C,E,]2 [A,,E,]2 | !mf![A,,E,A,]2 [A,,A,]3/2[E,,E,]/ | [E,,E,]2 [C,,C,]2 |
+% ? p4 s4 b1-b2: RH notes below the staff are drawn about a step low; read by the composer's ledger lines (on ledger = C4) and harmony
+% ? p4 s4 b2: LH beat 1 low note between E2 and F2, no ledger; read F#2 (D/F#)
+% ? p4 s4 b5: two stacked sharps before the 16th chord; read as one sharp on G (E7), D stays natural
+% p4 s5
+[V:RH] [CDF]3/2[CDA]/ [CDF]3/2[CE]/ | [CE]2 [E,G,B,D]2 | !p![DG]2 [DG]3/2[CF]/ | [DFA]2 [B,DG]2 | [DGB]3/2[B,G]/ [B,D]3/2^C/ |
+[V:LH] [D,,D,]3/2[F,,C,F,]/ [F,,F,]3/2[A,,C,E,]/ | [G,,G,]2 [G,,,G,,]2 | !p![G,,G,]2 [D,,D,]3/2[C,,C,]/ | [F,,D,F,]2 [G,,D,]2 | [G,,G,]3/2[G,,D,]/ [G,,G,]2 |
+% ? p4 s5 b2: RH beat 2 is a 4-note cluster on three ledger lines; read E3 G3 B3 D4 (G6 over G1-G2); could be plain G3 B3 D4
+% ? p4 s5 b2: two loose ledger dashes under the beat-1 chord carry no noteheads; ignored
+% p4 s6 (treble one sharp, bass none)
+[V:RH] [A,C]2 [A,CE]2 | [CEA]2 [CEA]3/2[B,DG]/ | [DEB]2 [CEA]2 | [CDF]3/2[CD]/ [A,CE]3/2[CDF]/ | !f!!arpeggio!!fermata![CDFA]2 !arpeggio!!fermata![G,B,DG]2 |]
+[V:LH] [E,,A,,C,]2 [A,,E,]2 | [A,,A,]2 [A,,E,A,]3/2[E,,E,]/ | [E,,E,]2 [C,,C,]2 | [D,,D,]3/2[C,D,]/ [E,,A,,E,]3/2[D,,D,]/ | !f!!arpeggio!!fermata![D,,F,,A,,D,F,A,]2 !arpeggio!!fermata![G,,,G,,B,,D,G,]2 |]
+% ? p4 s6 b2: same 16th chord as p4 s4 b5 but no sharp written; kept G natural (Em7 over E)
+% ? p4 s6 b4: RH 16th on beat 1 shows two heads, read C4 D4 (top could be E4)
+% ? p4 s6 b5: lowest LH note of the final chord has two ledger lines; read G1 (octave of G2) rather than B1

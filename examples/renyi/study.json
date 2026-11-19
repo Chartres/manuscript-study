@@ -1,0 +1,213 @@
+{
+ "title": "Dr. Zoltán Rényi — skladby pre klavír",
+ "subtitle": "Päť skladieb pre klavír z jedného zošita, prepísané z rukopisu.",
+ "composer": "Dr. Zoltán Rényi",
+ "lang": "sk",
+ "scan": "src/manuscript.pdf",
+ "dpi": 220,
+ "pieces": [
+  {
+   "slug": "olga-walzer",
+   "title": "Olga walzer",
+   "meta": "Introductio a valčík · F dur",
+   "abc": [
+    "abc/olga-1.abc",
+    "abc/olga-2.abc",
+    "abc/olga-3.abc"
+   ]
+  },
+  {
+   "slug": "hymna",
+   "title": "Hymna",
+   "meta": "Lento · A dur",
+   "abc": [
+    "abc/hymna.abc"
+   ]
+  },
+  {
+   "slug": "hymnisches-lied",
+   "title": "Hymnisches Lied",
+   "meta": "Maestoso · G dur",
+   "abc": [
+    "abc/hymnisches-lied.abc"
+   ]
+  },
+  {
+   "slug": "maria-walzer",
+   "title": "Maria Walzer",
+   "meta": "Tempo di valse · d mol",
+   "abc": [
+    "abc/maria.abc"
+   ]
+  },
+  {
+   "slug": "valcik",
+   "title": "Valčík",
+   "meta": "bez názvu · F dur",
+   "abc": [
+    "abc/valcik.abc"
+   ]
+  }
+ ],
+ "bars": {
+  "skip_staves": {
+   "4": [
+    1555
+   ]
+  },
+  "override": {
+   "1:3": [
+    187,
+    669,
+    1013,
+    1274,
+    1495,
+    1691,
+    2026
+   ],
+   "2:3": [
+    79,
+    584,
+    875,
+    1164,
+    1471,
+    1711,
+    1967
+   ],
+   "2:6": [
+    83,
+    541,
+    895,
+    1164,
+    1436,
+    1685,
+    1967
+   ],
+   "3:6": [
+    181,
+    621,
+    918,
+    1150,
+    1392,
+    1658,
+    1990,
+    2153
+   ],
+   "4:2": [
+    187,
+    747,
+    1180,
+    1652,
+    2071
+   ],
+   "4:3": [
+    206,
+    757,
+    1180,
+    1648,
+    2065
+   ],
+   "5:2": [
+    167,
+    619,
+    924,
+    1204,
+    1495,
+    1744,
+    2031
+   ],
+   "5:3": [
+    187,
+    555,
+    796,
+    1156,
+    1504,
+    1794,
+    2035
+   ],
+   "5:4": [
+    206,
+    645,
+    924,
+    1253,
+    1534,
+    1805,
+    2026
+   ],
+   "5:5": [
+    206,
+    619,
+    999,
+    1243,
+    1534,
+    1805,
+    2051
+   ],
+   "5:7": [
+    206,
+    576,
+    899,
+    1170,
+    1430,
+    1658,
+    1849,
+    2055
+   ],
+   "6:1": [
+    147,
+    600,
+    865,
+    1101,
+    1347,
+    1648
+   ],
+   "6:2": [
+    138,
+    649,
+    1135,
+    1544,
+    1947
+   ],
+   "6:3": [
+    138,
+    753,
+    1288,
+    1695,
+    1947
+   ],
+   "6:4": [
+    138,
+    692,
+    1245,
+    1947
+   ],
+   "6:5": [
+    138,
+    698,
+    1111,
+    1530,
+    1947
+   ],
+   "6:6": [
+    157,
+    698,
+    1131,
+    1603,
+    1947
+   ],
+   "6:7": [
+    138,
+    747,
+    1196,
+    1937
+   ],
+   "6:8": [
+    138,
+    757,
+    1180
+   ]
+  }
+ },
+ "feedback_url": "https://renyi.pages.dev/#chyba",
+ "footer": "Live family edition: <a href=\"https://renyi.pages.dev\">renyi.pages.dev</a>"
+}

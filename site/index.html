@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manuscript study</title>
+<style>
+  :root { --paper: oklch(0.975 0.012 85); --grid: oklch(0.84 0.03 235 / .45); --ink: oklch(0.34 0.14 268); --pencil: oklch(0.45 0.02 260); --text: oklch(0.24 0.02 260); }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--text); font: 17px/1.55 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    background-color: var(--paper);
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 19px 19px; }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 22px 56px; }
+  a { color: var(--ink); text-underline-offset: 3px; }
+  h1 { font-weight: normal; font-size: 2rem; margin: 0; color: var(--ink); }
+  .sub { margin: 4px 0 28px; color: var(--pencil); }
+  ol { list-style: none; margin: 0; padding: 0; }
+  li { padding: 18px 0; border-top: 1.5px solid var(--ink); }
+  h2 { font-weight: normal; font-style: italic; font-size: 1.5rem; margin: 0; color: var(--ink); }
+  .meta { color: var(--pencil); font-size: .92rem; margin: 2px 0 10px; }
+  .hraj { display: flex; align-items: center; gap: 12px; }
+  .hraj button { flex: none; width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--ink); background: var(--paper); color: var(--ink); cursor: pointer; display: grid; place-items: center; padding: 0; }
+  .hraj button svg { width: 18px; height: 18px; fill: currentColor; }
+  .hraj input { flex: 1; appearance: none; -webkit-appearance: none; background: transparent; height: 24px; margin: 0; cursor: pointer; }
+  .hraj input::-webkit-slider-runnable-track { height: 2px; background: var(--ink); }
+  .hraj input::-moz-range-track { height: 2px; background: var(--ink); }
+  .hraj input::-webkit-slider-thumb { -webkit-appearance: none; width: 15px; height: 11px; border-radius: 50%; background: var(--ink); margin-top: -4.5px; transform: rotate(-22deg); }
+  .hraj input::-moz-range-thumb { width: 15px; height: 11px; border: 0; border-radius: 50%; background: var(--ink); }
+  .hraj time { font-variant-numeric: tabular-nums; color: var(--pencil); font-size: .85rem; min-width: 7.5em; text-align: right; }
+  .odkazy { font-size: .88rem; margin-top: 8px; color: var(--pencil); }
+  footer { margin-top: 40px; color: var(--pencil); font-size: .85rem; }
+  @media (max-width: 480px) { .hraj time { min-width: 0; font-size: .78rem; } }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="nazov"></h1>
+  <p class="sub" id="sub"></p>
+  <ol id="kusy"></ol>
+  <footer id="paticka"></footer>
+</main>
+<script>
+const T = {
+  en: { compare: 'Manuscript and transcription', score: 'Score (PDF)', manuscript: 'Manuscript', play: 'Play', pause: 'Pause', loading: 'loading…', all: 'Whole manuscript (PDF)', report: 'Report a mistake' },
+  sk: { compare: 'Porovnať s rukopisom', score: 'Prepis nôt', manuscript: 'Rukopis', play: 'Prehrať', pause: 'Pozastaviť', loading: 'načítavam…', all: 'Celý rukopis (PDF)', report: 'Nahlásiť chybu' },
+};
+const ICON = { play: '<svg viewBox="0 0 18 18"><path d="M5 3 L15 9 L5 15 Z"/></svg>', pause: '<svg viewBox="0 0 18 18"><rect x="4" y="3" width="3.5" height="12"/><rect x="10.5" y="3" width="3.5" height="12"/></svg>' };
+const fmt = s => isFinite(s) ? `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}` : '–:––';
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+fetch('data/study.json').then(r => r.json()).then(m => {
+  const t = T[m.lang] || T.en; document.documentElement.lang = m.lang || 'en';
+  document.title = m.title; document.getElementById('nazov').textContent = m.title;
+  document.getElementById('sub').textContent = m.subtitle || m.composer || '';
+  document.getElementById('kusy').innerHTML = m.pieces.map(p => `<li>
+    <h2>${esc(p.title)}</h2><p class="meta">${esc(p.meta || '')}</p>
+    <div class="hraj" data-src="audio/${p.slug}.mp3"><button type="button" aria-label="${t.play} ${esc(p.title)}">${ICON.play}</button><input type="range" min="0" max="1000" value="0" aria-label="${esc(p.title)}"><time>0:00</time></div>
+    <div class="odkazy"><a href="study.html?k=${p.slug}">${t.compare}</a> · <a href="noty/${p.slug}.pdf">${t.score}</a> · <a href="noty/manuscript.pdf#page=${p.pages[0]}">${t.manuscript}</a> · <a href="audio/${p.slug}.mp3" download>MP3</a> · <a href="audio/${p.slug}.flac" download>FLAC</a>${m.feedback_url ? ` · <a href="${esc(m.feedback_url)}">${t.report}</a>` : ''}</div></li>`).join('');
+  document.getElementById('paticka').innerHTML = `<a href="noty/manuscript.pdf">${t.all}</a>${m.footer ? ' · ' + m.footer : ''}`;
+
+  // one shared player; Pages-style hosts ignore Range requests, so each MP3 loads whole and plays from memory
+  const audio = new Audio(); let current = null;
+  document.querySelectorAll('.hraj').forEach(el => {
+    const [btn, bar, time] = el.children;
+    btn.onclick = async () => {
+      if (current !== el) {
+        if (current) { audio.pause(); current.reset(); }
+        current = el; time.textContent = t.loading;
+        el.blob ??= fetch(el.dataset.src).then(r => r.blob()).then(b => URL.createObjectURL(b));
+        audio.src = await el.blob; if (current !== el) return;
+      }
+      audio.paused ? audio.play() : audio.pause();
+    };
+    bar.oninput = () => { if (current === el && audio.duration) audio.currentTime = bar.value / 1000 * audio.duration; };
+    el.update = () => { bar.value = audio.duration ? audio.currentTime / audio.duration * 1000 : 0; time.textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration)}`; };
+    el.icon = on => { btn.innerHTML = on ? ICON.pause : ICON.play; };
+    el.reset = () => { el.icon(false); bar.value = 0; time.textContent = '0:00'; };
+  });
+  audio.ontimeupdate = audio.onloadedmetadata = () => current && current.update();
+  audio.onplay = () => current.icon(true); audio.onpause = audio.onended = () => current && current.icon(false);
+});
+</script>
+</body>
+</html>

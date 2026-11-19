@@ -1,0 +1,55 @@
+X:1
+T:Maria Walzer
+C:Dr. Zoltán Rényi
+M:3/4
+L:1/8
+Q:1/4=160
+%%score {RH LH}
+V:RH clef=treble
+V:LH clef=bass
+K:F
+% p5 s1
+[V:RH] "^Tempo di valse"!p! A,4 DF | F6 & x4 de | f4 ed & F6 | !f! ^c4 de & A6 | [GB]6 | [Ed]6 |
+[V:LH] !p! [D,,D,]2 [F,A,]4 | [D,,D,]2 [F,A,]4 | [D,,D,]2 [D,A,]4 | !f! [E,,E,]2 [E,A,]4 | [F,,A,,C,]2 [E,G,C]2 [E,G,C]2 | G,,2 [G,B,D]2 [G,B,D]2 |
+% ? p5 s1 b1: brief expected an upbeat, but the scan has a full 3/4 bar (A3 half + two eighths; LH quarter + half)
+% ? p5 s1 b4: the "||" stroke before the RH half note read as a sharp on C5 (A7 harmony)
+% ? p5 s1 b5: LH beat 1 reads F2-A2-C3 (three stacked spaces) under C-E-G chords; bass F looks odd under C7
+% p5 s2
+[V:RH] !p! [FA]6 | [FA]2 z2 z2 |: !f! [CG]4 B2 | E4 [EG]2 | [CF]4 A2 | D4 [DG]2 |
+[V:LH] !p! F,,2 [F,A,C]2 [F,A,C]2 | F,,2 C,2 F,2 |: !f! [G,,G,]2 [G,B,D]4 | [A,,A,]2 [G,A,^C]4 | [D,,D,]2 [F,A,]4 | [B,,,B,,]2 [G,B,]4 |
+% ? p5 s2 b7-8: LH bass head sits on the E2 position with no ledger; read as F2 (F major, arpeggio F-C-F in b8)
+% ? p5 s2 b11: RH lower half note between F4 and G4; F4 chosen (D minor harmony)
+% p5 s3
+[V:RH] [CE]4 [CE]2 |[1 [CE]4 [CE]2 | [CA]6 | [CA]6 | [^CA]2 z2 z2 :|[2 [A,D]4 [A,^CE]2 |
+[V:LH] [=B,,,=B,,]2 [^G,C]4 |[1 [B,,,B,,]2 [G,C]4 | [A,,,A,,]2 [E,G,A,]2 [E,G,A,]2 | [A,,,A,,]2 [E,G,A,]2 [E,G,A,]2 | [A,,E,G,A,]2 z2 z2 :|[2 [D,,D,]2 [A,,A,]4 |
+% ? p5 s3 b13: LH naturals on B1/B2 and sharp G3 under RH C-E (C augmented over B) - read as written
+% ? p5 s3 b18: LH low note hangs under a ledger drawn at the C2 position (would be B1); read as D2 (D minor)
+% p5 s4
+[V:RH] "^rit." D6 | !p! D2 z2 z2 |: !mf! C4 [CE]2 | [EG]4 [EB]2 | ^c4 d2 & !f! E6 | e4 d2 & !ff! E6 |
+[V:LH] [D,,D,]2 [A,,,A,,]2 [F,,,F,,]2 | !p! [D,,D,]2 z2 z2 |: !mf! G,,2 [G,B,C]4 | [C,,C,]2 [G,C]4 | !f! G,,2 [G,B,E]4 | !ff! C,2 [G,B,E]4 |
+% ? p5 s4 b19-20: RH single notes drawn at the C4 position without ledger line; read as D4 (writer ledgers every single C4)
+% ? p5 s4 b23-24: LH top chord note has one ledger line but sits at E4 height; read as E4 (A7b9 / C7 with Bb3)
+% p5 s5
+[V:RH] [FA]6 | A3 ^GAB & E6 | [EA]6 | [EA]2 z2 z2 :| !p! A,4 DF | [FA]4 de |
+[V:LH] F,,2 C2 C2 & x2 [F,A,]4 | [E,,E,]2 [G,A,^C]4 | A,,2 [G,A,C]2 [G,A,C]2 | [A,,^C,G,A,]2 z2 z2 :| !p! [D,,D,]2 [F,A,]4 | [D,,D,]2 [F,A,]4 |
+% ? p5 s5 b25: LH bass on the E2 position without ledger; read as F2 as in b7
+% ? p5 s5 b26: RH upper A4 written as a quarter; made dotted quarter so the beamed G#-A-Bb eighths fit the bar
+% ? p5 s5 b27: LH chords have no sharp on C4 (A minor 7), unlike the A7 bars around it - kept as written
+% ? p5 s5 b29: RH D4 and F4 written as two unbeamed quarters (bar would be 4 beats); played as eighths like b1
+% p5 s6
+[V:RH] !f! [Ff]4 ed | [A^c]4 de | [GB]6 | [Ed]6 | [EA]6 | [CEA]2 z2 z2 |
+[V:LH] !f! [D,,D,]2 [D,A,]4 | [E,,E,]2 [E,A,]4 | C,2 [E,G,C]2 [E,G,C]2 | G,,2 [G,B,D]2 [G,B,D]2 | A,,2 [G,A,^C]2 [G,A,C]2 | [A,,G,A,]2 z2 z2 |
+% ? p5 s6 b31: RH E5 and D5 written as two unbeamed quarters after a half (4 beats); played as eighths like b3
+% ? p5 s6 b34: LH chord heads unevenly spaced; read G3-Bb3-D4 as in b6
+% ? p5 s6 b36: RH chord A4-E4-C4 has no sharp on C4 (b17 has one) - kept natural as written
+% p5 s7
+[V:RH] !f! [CG]4 B2 | E4 [EG]2 | !f! [CF]4 A2 | D4 [DF]2 | [CE]4 [CE]2 | [DF]4 [^CE]2 || D6 |
+[V:LH] !f! [G,,G,]2 [G,B,D]4 | [A,,A,]2 [E,A,^C]4 | !f! [D,,D,]2 [F,A,]4 | [B,,,B,,]2 [G,C]4 | [G,,,G,,]2 [^G,C]4 | [^G,A,]6 || [D,,D,]2 A,,2 F,,2 |
+% ? p5 s7 b37: LH chord heads unclear; read G3-Bb3-D4 as in b9
+% ? p5 s7 b40: RH half and lower chord note at the C4 position without ledger; read as D4 (cf. b12); LH chord G3-C4
+% ? p5 s7 b42: RH sharp stands beside a ledgered head read as C#4 (A3 position); LH accidental before G3/A3 read as G#3
+% ? p5 s7 b43: RH single note at C4 position without ledger; read as D4 as in b19
+% p6 s1
+[V:RH] D2 z2 z2 | [^CEGA]2 z2 z2 | !ff! [DFAd]2 z2 z2 | !fff! [FAdf]2 z2 z2 | !f! [DFAd]2 z2 z2 "_fine" |]
+[V:LH] [D,,D,]2 z2 z2 | [A,,A,]2 z2 z2 | !ff! [D,,D,]2 z2 z2 | !fff! [A,,A,]2 z2 z2 | !f! [D,,D,]2 z2 z2 |]
+% ? p6 s1 b3, b5: lowest RH chord note at C4 height without ledger; read as D4 (D minor final chord)

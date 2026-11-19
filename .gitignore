@@ -1,0 +1,4 @@
+examples/*/build/
+examples/*/site/
+.venv/
+__pycache__/
