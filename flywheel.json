@@ -34,5 +34,5 @@
     "skill",
     "family"
   ],
-  "notes": "Prototype: renyi.pages.dev (repo ~/my-git/renyi), built 2026-11-19. Form chosen by Pavol 2026-11-19: open-source skill + template, $0 infra, no API calls. Probe approved 2026-11-19: open-source the pipeline, stage a post for r/ClaudeAI / Show HN; Pavol sends."
+  "notes": "Prototype: renyi.pages.dev (repo ~/my-git/renyi), built 2026-11-19. Form chosen by Pavol 2026-11-19: open-source skill + template, $0 infra, no API calls. Probe approved 2026-11-19: open-source the pipeline, stage a post for r/ClaudeAI / Show HN; Pavol sends. Repo public 2026-11-19 (CI green). Probe pre-registered in docs/probe.md: PASS = ≥1 outside person tries it or asks for a study, or ≥3 comments describing a manuscript they hold, read 2026-11-28. Posts staged for Pavol: Show HN, then r/ClaudeAI."
 }
