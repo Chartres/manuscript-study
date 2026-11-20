@@ -23,15 +23,16 @@ do not post there.
 
 ## Show HN
 
-Title: `Show HN: My grandfather's handwritten waltzes, played bar by bar against the original`
+Title: `Show HN: My grandfather's handwritten waltzes for my grandmother and mother, played bar by bar`
 
 URL: https://manuscript-study.dravec.org
 
 First comment:
 
-> My grandfather, Dr. Zoltán Rényi, left a squared school notebook of piano pieces: two waltzes,
-> two hymns, one untitled waltz. Nobody in the family reads music well enough to play them, and the
-> sheet-music scanning apps could not read his handwriting.
+> My grandfather, Dr. Zoltán Rényi, left a squared school notebook of piano pieces, probably from the
+> 1950s: a waltz for his wife Olga, one for his daughter Maria (my mother), two hymns and an untitled
+> waltz. Nobody in the family reads music well enough to play them, and the sheet-music scanning apps
+> could not read his handwriting.
 >
 > I had Claude read the pages into ABC notation, one line per manuscript system, logging every
 > unsure note with a reason (97 for six pages). A second, closer pass cleared most of those and
@@ -48,15 +49,16 @@ First comment:
 > first ten, free, within a week. I want to learn whether other families have these notebooks and
 > whether they check the marked notes or only listen.
 
-Prefilled submit link: https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fmanuscript-study.dravec.org&t=Show%20HN%3A%20My%20grandfather%27s%20handwritten%20waltzes%2C%20played%20bar%20by%20bar%20against%20the%20original
+Prefilled submit link: https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fmanuscript-study.dravec.org&t=Show%20HN%3A%20My%20grandfather%27s%20handwritten%20waltzes%20for%20my%20grandmother%20and%20mother%2C%20played%20bar%20by%20bar
 
 ## r/Genealogy
 
 Title: `My grandfather's handwritten piano music, made playable with the original shown bar by bar`
 
-> My grandfather, Dr. Zoltán Rényi, left a notebook of handwritten piano pieces: waltzes and two
-> hymns. Nobody in the family reads music well enough to play them, and archives generally do not
-> take this kind of material.
+> My grandfather, Dr. Zoltán Rényi, left a notebook of handwritten piano pieces, probably from the
+> 1950s: a waltz for my grandmother Olga, one for my mother Maria, two hymns and an untitled waltz.
+> Nobody in the family reads music well enough to play them, and archives generally do not take this
+> kind of material.
 >
 > I turned it into a page where you listen to each piece while the original handwriting and a clean
 > transcription move along together, bar by bar. Places where the handwriting was unclear are marked
