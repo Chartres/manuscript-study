@@ -9,14 +9,14 @@ V:RH clef=treble
 V:LH clef=bass
 K:A
 % p4 s2
-[V:RH] "^Lento"E2 A3/2G/ B2 A2 & C2 D2 E4 | c3/2A/ E^D =D2 F2 & C3 ^D =D2 =D2 | B2 B3/2^A/ c2 B2 & E2 ^D2 =D4 | G3/2B/ GF F2 E2 & =D2 ^D2- ^D2 E2 |
-[V:LH] A,4 A,4 & A,,2 B,,2 C,4 | A,2 z G, F,4 & A,,4 D,2 B,,2 | G,2 z G, ^G,4 & E,4 E,4 | F,2 A,2- A,2 G,2 & B,,4 E,4 |
-% ? p4 s2 b2: alto C#4 written as half note but the D#4 on beat 2.5 also carries a down-stem; read as C#4 dotted quarter + D#4 eighth
-% ? p4 s2 b2-b3: tenor "z G," - glyph between beats read as eighth rest (could be a natural on G; no natural read, so G#3 from key)
-% ? p4 s2 b3: alto half note on beat 3 read as D natural (E7 chord); strictly the D# from beat 2 would carry
-% ? p4 s2 b4: sop beat 3 between F#4/G#4, read F#4; alto beat 4 not written, held as E4 with the soprano
+[V:RH] "^Lento"E2 A3/2G/ B2 A2 & C2 D2 E4 | c3/2A/ E^D =D2 F2 & C4 =D2 =D2 | B2 B3/2^A/ c2 B2 & E2 ^D2 =D4 | G3/2B/ GF F2 E2 & =D2 ^D2- ^D2 E2 |
+[V:LH] A,4 A,4 & A,,2 B,,2 C,4 | A,2 =G,2 F,4 & A,,4 D,2 B,,2 | G,2 =G,2 ^G,4 & E,4 E,4 | F,2 A,2- A,2 G,2 & B,,4 E,4 |
+% fixed Claude (druhé čítanie) 2026-11-20: p4 s2 b2: alto C#4 written as half note but the D#4 on beat 2.5 also carries a down-stem; read as C#4 dotted quarter + D#4 eighth — The alto C#4 is a hollow half note with no dot, and the same passage in bar 6 writes the alto as a plain C#4 half note moving to D4; the down-stem on the D#4 eighth is the outlier (it would overflow the alto to 4.5 beats), so hold C#4 for two beats and let the D#4 belong to the soprano only.
+% fixed Claude (druhé čítanie) 2026-11-20: p4 s2 b2-b3: tenor "z G," - glyph between beats read as eighth rest (could be a natural on G; no natural read, so G#3 from key) — The glyph before the tenor's beat-2 note is the writer's natural sign (same vertical-stroke-plus-7 shape as the treble naturals in bars 2, 6 and 8), not an eighth rest, and the G has no flag, so it is a G-natural quarter: A7 resolving to D in bar 2, and in bar 3 the explicit sharp on the beat-3 G only makes sense after a G natural.
+% ok Claude (druhé čítanie) 2026-11-20: p4 s2 b3: alto half note on beat 3 read as D natural (E7 chord); strictly the D# from beat 2 would carry — The hollow note sits just below the bottom line (D, drawn a little low as usual); the chord is E7 with C#5 resolving to B4, the alto keeps D natural into bar 4 beat 1 where no accidental is written, and the line repeats bar 2's E-D#-D descent, so D natural is intended and the missing natural is the composer's slip.
+% ok Claude (druhé čítanie) 2026-11-20: p4 s2 b4: sop beat 3 between F#4/G#4, read F#4; alto beat 4 not written, held as E4 with the soprano — Beat 3 is a B7 over the E bass (A and D# tied in from beat 2) resolving to E on beat 4, so the soprano is F#4, a repeat of the F#4 eighth just before it; the alto's unwritten beat-4 E4 is the same pitch as the soprano's E4 and sounds identical either way.
 % p4 s3
 [V:RH] A2 A3/2G/ B2 A2 & C2 D2 E4 | c3/2A/ E^D =D2 F2 & C4 =D4 | B2 B3/2^A/ c2 B2 & =D2 C2 =D4 | G3/2E/ FG B2 A2 & B,2 E^D =D2 C2 |]
 [V:LH] A,4 A,4 & A,,2 B,,2 C,4 | A,2 G,2 F,2 A,2 & A,,4 D,4 | G,2 G,2 G,4 & E,4 E,4 | G,2 A,F, G,2 A,2 & E,2 D,B,, E,,2 A,,2 |]
-% ? p4 s3 b4: LH beat 2 drawn without flags; read as eighths (A3/F#3 over D3/B2) so the bar adds up
-% ? p4 s3 b4: bass beat 3 note on a ledger read as E2 (detector put it near D2)
+% ok Claude (druhé čítanie) 2026-11-20: p4 s3 b4: LH beat 2 drawn without flags; read as eighths (A3/F#3 over D3/B2) so the bar adds up — The LH heads on beat 2 sit at the two eighth positions under the soprano's beamed eighths, and only eighths make the bar add up; the pitches A3/F#3 over D3/B2 read cleanly on the lines.
+% ok Claude (druhé čítanie) 2026-11-20: p4 s3 b4: bass beat 3 note on a ledger read as E2 (detector put it near D2) — The note sits on a ledger line drawn one space below the bottom line, which is E2, and the final cadence E7 to A (bass E2 to A2) confirms it.

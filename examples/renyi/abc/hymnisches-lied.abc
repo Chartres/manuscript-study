@@ -11,17 +11,17 @@ K:G
 % p4 s4 (treble shows one sharp; bass staff has no key signature in the scan, F# kept by harmony)
 [V:RH] "^Maestoso"[B,D]2 [DG]3/2[CF]/ | [DFA]2 [B,DG]2 | [DGB]3/2[B,G]/ [B,D]3/2^C/ | [A,C]2 [A,CE]2 | !mf![CEA]2 [CEA]3/2[B,D^G]/ | [DEB]2 [CEA]2 |
 [V:LH] [G,,G,]2 [D,,D,]3/2[C,,C,]/ | [F,,F,]2 [G,,G,]2 | [G,,G,]3/2[G,,D,]/ [D,,D,]2 | [A,,C,E,]2 [A,,E,]2 | !mf![A,,E,A,]2 [A,,A,]3/2[E,,E,]/ | [E,,E,]2 [C,,C,]2 |
-% ? p4 s4 b1-b2: RH notes below the staff are drawn about a step low; read by the composer's ledger lines (on ledger = C4) and harmony
-% ? p4 s4 b2: LH beat 1 low note between E2 and F2, no ledger; read F#2 (D/F#)
-% ? p4 s4 b5: two stacked sharps before the 16th chord; read as one sharp on G (E7), D stays natural
+% ok Claude (druhé čítanie) 2026-11-20: p4 s4 b1-b2: RH notes below the staff are drawn about a step low; read by the composer's ledger lines (on ledger = C4) and harmony — Each low head sits in the space next to the ledger line the writer drew (B3 hanging under the C4 ledger, C4 on it), and the chords come out as G, G, D7/C, D/F#, G over the LH octaves G-D-C-F#-G, so no other reading fits.
+% ok Claude (druhé čítanie) 2026-11-20: p4 s4 b2: LH beat 1 low note between E2 and F2, no ledger; read F#2 (D/F#) — The head hangs just under the bottom line with no ledger (F#2; E2 would need a ledger), it doubles the clear F#3 above it as every LH note in these bars is an octave, and the repeat in bar 10 is drawn the same way.
+% ok Claude (druhé čítanie) 2026-11-20: p4 s4 b5: two stacked sharps before the 16th chord; read as one sharp on G (E7), D stays natural — One sharp is level with the top note, which can only be G#4 (A# makes no chord here), giving E7 over the E bass leading into the E chord of bar 6; the second sharp is level with no notehead, and D# would contradict the D natural in the same voice in bar 6.
 % p4 s5
 [V:RH] [CDF]3/2[CDA]/ [CDF]3/2[CE]/ | [CE]2 [E,G,B,D]2 | !p![DG]2 [DG]3/2[CF]/ | [DFA]2 [B,DG]2 | [DGB]3/2[B,G]/ [B,D]3/2^C/ |
 [V:LH] [D,,D,]3/2[F,,C,F,]/ [F,,F,]3/2[A,,C,E,]/ | [G,,G,]2 [G,,,G,,]2 | !p![G,,G,]2 [D,,D,]3/2[C,,C,]/ | [F,,D,F,]2 [G,,D,]2 | [G,,G,]3/2[G,,D,]/ [G,,G,]2 |
-% ? p4 s5 b2: RH beat 2 is a 4-note cluster on three ledger lines; read E3 G3 B3 D4 (G6 over G1-G2); could be plain G3 B3 D4
-% ? p4 s5 b2: two loose ledger dashes under the beat-1 chord carry no noteheads; ignored
+% ok Claude (druhé čítanie) 2026-11-20: p4 s5 b2: RH beat 2 is a 4-note cluster on three ledger lines; read E3 G3 B3 D4 (G6 over G1-G2); could be plain G3 B3 D4 — On a close look there are four separate heads stacked between and below three deliberately drawn ledger lines (D4, B3, G3, and E3 under the third ledger), so the written chord is E3 G3 B3 D4; the plain G3-B3-D4 reading would leave the bottom head and the third ledger unexplained.
+% ok Claude (druhé čítanie) 2026-11-20: p4 s5 b2: two loose ledger dashes under the beat-1 chord carry no noteheads; ignored — The two short dashes under the beat-1 chord carry no noteheads, so there is nothing to play; ignoring them is the only option.
 % p4 s6 (treble one sharp, bass none)
 [V:RH] [A,C]2 [A,CE]2 | [CEA]2 [CEA]3/2[B,DG]/ | [DEB]2 [CEA]2 | [CDF]3/2[CD]/ [A,CE]3/2[CDF]/ | !f!!arpeggio!!fermata![CDFA]2 !arpeggio!!fermata![G,B,DG]2 |]
 [V:LH] [E,,A,,C,]2 [A,,E,]2 | [A,,A,]2 [A,,E,A,]3/2[E,,E,]/ | [E,,E,]2 [C,,C,]2 | [D,,D,]3/2[C,D,]/ [E,,A,,E,]3/2[D,,D,]/ | !f!!arpeggio!!fermata![D,,F,,A,,D,F,A,]2 !arpeggio!!fermata![G,,,G,,B,,D,G,]2 |]
 % ? p4 s6 b2: same 16th chord as p4 s4 b5 but no sharp written; kept G natural (Em7 over E)
-% ? p4 s6 b4: RH 16th on beat 1 shows two heads, read C4 D4 (top could be E4)
-% ? p4 s6 b5: lowest LH note of the final chord has two ledger lines; read G1 (octave of G2) rather than B1
+% ok Claude (druhé čítanie) 2026-11-20: p4 s6 b4: RH 16th on beat 1 shows two heads, read C4 D4 (top could be E4) — The top of the two heads sits in the space under the bottom line (D4), well below the E4 line, and it doubles the LH 16th C3-D3 an octave higher.
+% ok Claude (druhé čítanie) 2026-11-20: p4 s6 b5: lowest LH note of the final chord has two ledger lines; read G1 (octave of G2) rather than B1 — The writer drew two ledger lines where three belong (as elsewhere on the page), and this is the final chord of a D7 to G cadence over a root-position RH G chord, so the bass must be G1; B1 would leave the piece ending on an inverted chord.

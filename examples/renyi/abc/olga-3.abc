@@ -9,40 +9,40 @@ V:RH clef=treble
 V:LH clef=bass
 K:F
 % p3 s1
-[V:RH] C6 | ^C6 | =C6 | [EG]6 | [A,CF]6 | [A,CF]2 z2 z2 ||
+[V:RH] C6 | ^C6 | =C6 | [EA]6 | [A,CF]6 | [A,CF]2 z2 z2 ||
 [V:LH] ^D,,2 [^F,A,C]2 [^F,A,C]2 | G,,2 [G,A,]2 [G,A,]2 | C,2 [G,B,D]2 [G,B,D]2 | [C,,C,]2 [G,B,D]2 [G,B,D]2 | F,,2 A,,2 C,2 | F,2 z2 z2 ||
 % ? p3 s1 b1: RH note sits just below the staff with no ledger; read C4 (C - C# - natural C line, fits D#dim7). LH bass written with a sharp: D#2.
-% ? p3 s1 b4: RH upper head between G4 and A4; took G4 (C9 chord tone).
-% ? p3 s1 b6: RH top head drawn near G4; took F4 (final F chord, same shape as b5).
+% fixed Claude (druhé čítanie) 2026-11-20: p3 s1 b4: RH upper head between G4 and A4; took G4 (C9 chord tone). — The upper head fills the A4 space between the B4 and G4 lines (checked on the full page); it is A4, not G4. E-A over C9 is a C13 sound and the A carries into the F chord of the next bar.
+% ok Claude (druhé čítanie) 2026-11-20: p3 s1 b6: RH top head drawn near G4; took F4 (final F chord, same shape as b5). — Top head is drawn a little high, but it is the final F chord after an A-C-F bar; G would leave the last chord without its root, so F4 stands.
 % p3 s2
 [V:RH] C2 [C-F]2 [CA]2 | [Fc]4 A2 | F4 D2 | E6 | C2 E2 [EG]2 | [E-c]4 [EB]2 |
 [V:LH] [F,,F,]2 [F,A,C]2 [F,A,C]2 | C,2 [F,A,C]2 [F,A,C]2 | D,2 F,2 A,2 | [G,,G,]2 [G,B,D]2 [G,B,D]2 | C,2 [G,B,D]2 [G,B,D]2 | G,,2 [G,C]2 [G,C]2 |
-% ? p3 all systems: low octave notes below the bass staff are drawn at the E2 position without ledger lines; read as F2 wherever the upper note is F3 (octave doubling).
+% ok Claude (druhé čítanie) 2026-11-20: p3 all systems: low octave notes below the bass staff are drawn at the E2 position without ledger lines; read as F2 wherever the upper note is F3 (octave doubling). — General note: low F2s in this system are drawn at E2 height (b83) under an F3, the writer's known habit; other low notes (G2 in b86, b88) sit on their lines and are read as drawn.
 % p3 s3
 [V:RH] D4 E2 | [CFA]6 | C2 [C-F]2 [CA]2 | [F-c]4 [FA]2 | F4 D2 | [CE]6 |
 [V:LH] C,2 [G,B,D]2 [G,B,D]2 | [F,,F,]2 [F,A,]2 [F,C]2 | C,2 [F,A,C]2 [F,A,C]2 | [F,,F,]2 [F,A,C]2 [F,A,C]2 | D,2 [G,=B,D]2 [G,=B,D]2 | C,2 [G,_B,D]2 [G,B,D]2 |
-% ? p3 s3 b1: RH half note between C4 and D4 with no ledger; took D4.
+% ok Claude (druhé čítanie) 2026-11-20: p3 s3 b1: RH half note between C4 and D4 with no ledger; took D4. — Half note hangs below E4 without a ledger; the writer gives every C4 on this page a ledger (b78, b79, b83, b87), so D4; D-E-F rising into the next bar.
 % p3 s4
 [V:RH] C2 E2 [EG]2 | [E-c]4 [EB]2 | D4 [CE]2 | [CF]6 | F2 [F-A]2 [Fc]2 | [A-f]4 [Ae]2 |
 [V:LH] E,2 [G,B,D]2 [G,B,D]2 | G,,2 [G,B,D]2 [G,B,D]2 | C,2 [G,B,D]2 [G,B,D]2 | [F,,F,]2 [F,A,C]2 [F,A,C]2 | [F,,F,]2 [F,A,C]2 [F,A,C]2 | D,2 [G,B,D]2 [G,B,D]2 |
-% ? p3 s4 b3: RH half note between C4 and D4 with no ledger; took D4.
+% ok Claude (druhé čítanie) 2026-11-20: p3 s4 b3: RH half note between C4 and D4 with no ledger; took D4. — Half note without a ledger sits clearly higher than the ledgered C4 in the beat-3 chord of the same bar, so D4.
 % p3 s5
-[V:RH] [G-f]4 [Ge]2 | [Gd]6 | E2 [EG]2 [EB]2 | [G-e]4 [Gd]2 | [G-d]4 [Gc]2 | [EGc]6 |
+[V:RH] [G-e]4 [Gd]2 | [Gd]6 | E2 [EG]2 [EB]2 | [G-e]4 [Gd]2 | [G-d]4 [Gc]2 | [EGc]6 |
 [V:LH] C,2 [G,B,D]2 [G,B,D]2 | B,,2 [G,B,D]2 [G,B,D]2 | C,2 [G,B,D]2 [G,B,D]2 | G,,2 [G,B,D]2 [G,B,D]2 | [E,,E,]2 [G,B,D]2 [G,B,D]2 | C,2 [G,B,D]2 [G,B,D]2 |
-% ? p3 s5 b1: RH upper half note between F5 and E5; took F5 (f-e step, like p3 s4 b6).
-% ? p3 s5 b5: RH upper half note between E5 and D5; took D5 (descending sequence f-e, d, e-d, d-c).
+% fixed Claude (druhé čítanie) 2026-11-20: p3 s5 b1: RH upper half note between F5 and E5; took F5 (f-e step, like p3 s4 b6). — The upper half note hangs in the E5 space below the F5 line and the quarter sits on the D5 line, drawn exactly like b104 (e-d) and unlike b100 where the f is centred on the F5 line; this gives the sequence f-e | e-d | d then e-d | d-c | c.
+% ok Claude (druhé čítanie) 2026-11-20: p3 s5 b5: RH upper half note between E5 and D5; took D5 (descending sequence f-e, d, e-d, d-c). — Upper half note is centred on the D5 line and the quarter is in the C5 space; d-c as transcribed.
 % p3 s6
 [V:RH] [Cc]2 [Ff]2 [Aa]2 | [cc']4 [Aa]2 | [Ff]4 [Dd]2 | [Ee]6 | [Cc]2 [Ee]2 [Gg]2 | [cc']4 [Bb]2 | [Dd]4 [Ee]2 ||
 [V:LH] [F,,F,]2 [F,A,C]4 | C,2 [F,A,C]2 [F,A,C]2 | D,2 [F,A,]4 | C,2 [G,C]4 | C,2 [G,CE]4 | G,,2 [G,CE]4 | C,2 [G,B,C]4 ||
-% ? p3 s6 b3: RH lower octave note drawn near C4; took D4 (octave of D5, Dm bar).
-% ? p3 s6 b5: LH open chord read G3-C4-E4 (top head on a second ledger line); could be G3-Bb3-E4.
+% ok Claude (druhé čítanie) 2026-11-20: p3 s6 b3: RH lower octave note drawn near C4; took D4 (octave of D5, Dm bar). — Lower quarter hangs below E4 without a ledger (writer's D4), an octave under the D5 above it in a Dm bar.
+% ok Claude (druhé čítanie) 2026-11-20: p3 s6 b5: LH open chord read G3-C4-E4 (top head on a second ledger line); could be G3-Bb3-E4. — Top head is on a ledger at E4 height; the middle head matches the C4 in the identical G-C-E chord of the next bar (b112) and sits higher than the Bb3 in b113, so G-C-E (plain C under the RH C-E-G arpeggio).
 % p3 s7
 [V:RH] [Ff]2 [Cc]2 [Aa]2 | [A-f]4 [Ad]2 | [Ac]4 A2 | [EGd]4 c2 | [CFA]4 [CEG]2 |
 [V:LH] [F,,A,,C,F,]2 [F,A,C]2 [F,A,C]2 | F,,F, F,,F, F,,F, | F,,F, F,,F, F,,F, | C,C C,C C,C | D,C D,C D,C |
-% ? p3 s7 b2-b3: LH low eighths drawn at E2 without ledger; read F2 (F octaves under F/Dm harmony).
-% ? p3 s7 b5: LH eighths read D3/C4 (no ledger on the upper note; B3 possible).
+% ok Claude (druhé čítanie) 2026-11-20: p3 s7 b2-b3: LH low eighths drawn at E2 without ledger; read F2 (F octaves under F/Dm harmony). — Low eighths are drawn at E2 height in octaves with F3, the writer's habit for F2; F pedal under F/Dm.
+% ok Claude (druhé čítanie) 2026-11-20: p3 s7 b5: LH eighths read D3/C4 (no ledger on the upper note; B3 possible). — Upper eighths float a half-space above the top line at the same height as the ledgered C4s in the previous bar; D-C fits the RH F-A-C, Bb would clash with the A.
 % p4 s1
 [V:RH] [C-F]2 [CF]2 [Ac]2 | [FBd]2 z2 z2 | [EGce]2 z2 z2 | [Af]2 z2 z2 | [Aca]2 z2 z2 | [FAf]6 | [FAcf]2 z2 z2 |]
 [V:LH] [F,D]2 [D,D]2 [C,C]2 | [B,,B,]2 z2 z2 | [G,,G,]2 z2 z2 | [C,C]2 z2 z2 | [F,,F,]2 z2 z2 | [F,,F,]6 | [F,,F,]2 z2 z2 |]
-% ? p4 s1 b6: RH lower part of the dotted chord read as A4+F4 (dot sits in the A4 space).
+% ok Claude (druhé čítanie) 2026-11-20: p4 s1 b6: RH lower part of the dotted chord read as A4+F4 (dot sits in the A4 space). — The open shape below the top F5 has two parts, in the A4 and F4 spaces, each with its own dot; F-A-F as transcribed.
 % p4 s1 ends with "fine" (the D.C. target is not marked in this section).
