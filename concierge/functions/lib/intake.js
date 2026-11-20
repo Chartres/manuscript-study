@@ -21,9 +21,20 @@ export function check(fields, files) {
     message: cap(fields.message, 3000), example_ok: fields.example_ok === "yes" };
 }
 
-export async function telegram(env, text) {
-  if (!env.TG_TOKEN || !env.TG_CHAT) return;
-  await fetch(`https://api.telegram.org/bot${env.TG_TOKEN}/sendMessage`, { method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({ chat_id: env.TG_CHAT, text, disable_web_page_preview: true }) }).catch(() => {});
+// Messages to Pavol through the msg door (msg.dravec.org; logseq-graph think/msg/README.md),
+// with this Pages project's own credential (secret MSG_TOKEN, prefix manuscript.). The mini delivers
+// to Telegram, so the project holds no bot token. Visitor text is outside text: it goes as one
+// plain info message (the mini escapes markup), never as a link or anything else.
+export async function ping(env, text, from = "manuscript.concierge") {
+  if (!env.MSG_TOKEN) return false;
+  try {
+    const res = await fetch("https://msg.dravec.org/", {
+      method: "POST",
+      headers: { authorization: `Bearer ${env.MSG_TOKEN}`, "content-type": "application/json" },
+      body: JSON.stringify({ v: 1, from, kind: "info", severity: "normal", text: String(text).slice(0, 2000) }),
+    });
+    return res.status === 202;
+  } catch {
+    return false;
+  }
 }
