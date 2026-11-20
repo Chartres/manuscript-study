@@ -5,8 +5,10 @@ a transcription with every doubtful reading marked and explained, a piano record
 where each bar of the original sits over the same bar of the transcription while a cursor follows
 the music.
 
-**Example:** [renyi.pages.dev](https://renyi.pages.dev) — five piano pieces from a family manuscript
+**Example:** [renyi.dravec.org](https://renyi.dravec.org) — five piano pieces from my grandfather's manuscript
 (Slovak). Open "Porovnať s rukopisom" on any piece.
+
+**Not technical?** Send photos of your manuscript at [manuscript-study.dravec.org](https://manuscript-study.dravec.org): the first ten studies are made for you, free.
 
 ## Why
 

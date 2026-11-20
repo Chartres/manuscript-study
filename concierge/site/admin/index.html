@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Žiadosti</title>
+<style>
+  body { margin: 0; font: 16px/1.5 Georgia, serif; color: #223; background: #faf7f0; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 60px; }
+  h1 { font-weight: normal; color: #1d2f80; }
+  .r { border-top: 1.5px solid #1d2f80; padding: 12px 0; }
+  .m { color: #667; font-size: .88rem; }
+  .pages { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; } .pages img { width: 110px; height: 150px; object-fit: cover; border: 1px solid #ccd; }
+  select { font: inherit; padding: 6px; }
+</style></head>
+<body><main><h1>Žiadosti</h1><div id="z">Načítavam…</div></main>
+<script>
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+fetch('/admin/api/requests').then(async r => {
+  const z = document.getElementById('z');
+  if (!r.ok) { z.textContent = r.status === 403 ? 'Len pre Pavla.' : 'Chyba ' + r.status; return; }
+  const list = await r.json();
+  if (!list.length) { z.textContent = 'Zatiaľ nič.'; return; }
+  z.innerHTML = list.map(q => `<div class="r" data-id="${q.id}">
+    <b>${esc(q.name || '—')}</b> · <a href="mailto:${esc(q.email)}">${esc(q.email)}</a> · ${esc(q.kind)} · ${q.pages} str.
+    <div class="m">${new Date(q.at).toLocaleString('sk')}${q.occasion ? ' · príležitosť: ' + esc(q.occasion) : ''}${q.example_ok ? ' · smie byť ukážkou' : ''}</div>
+    ${q.message ? `<p>${esc(q.message)}</p>` : ''}
+    <div class="pages">${Array.from({ length: q.pages }, (_, n) => `<a href="/admin/api/page?id=${q.id}&n=${n}" target="_blank"><img src="/admin/api/page?id=${q.id}&n=${n}" alt="strana ${n + 1}" loading="lazy"></a>`).join('')}</div>
+    <select>${['new', 'working', 'delivered', 'declined'].map(s => `<option ${s === q.status ? 'selected' : ''}>${s}</option>`).join('')}</select></div>`).join('');
+  z.querySelectorAll('.r select').forEach(sel => sel.onchange = () => fetch('/admin/api/requests', { method: 'POST',
+    headers: { 'content-type': 'application/json' }, body: JSON.stringify({ id: sel.closest('.r').dataset.id, status: sel.value }) }));
+});
+</script></body></html>

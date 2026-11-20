@@ -1,0 +1,10 @@
+name = "manuscript-study"
+pages_build_output_dir = "site"
+compatibility_date = "2026-06-01"
+
+[[kv_namespaces]]
+binding = "REQUESTS"
+id = "e8768d166a394437967d1e056d4aa4b5"
+
+[vars]
+OWNERS = "palo.dravecky@gmail.com,pavol@dravecky.sk"

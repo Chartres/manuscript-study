@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hear the music in a handwritten score</title>
+<meta name="description" content="Send photos of a handwritten music manuscript. Get back a recording, a clean score, and a page where the original and the transcription play bar by bar, with every unclear note marked.">
+<meta property="og:title" content="Hear the music in a handwritten score">
+<meta property="og:description" content="My grandfather's handwritten waltzes, played bar by bar against the original. Send yours: free for the first ten manuscripts.">
+<style>
+  :root { --paper: oklch(0.975 0.012 85); --grid: oklch(0.84 0.03 235 / .45); --ink: oklch(0.34 0.14 268); --pencil: oklch(0.45 0.02 260); --text: oklch(0.24 0.02 260); --doubt: oklch(0.86 0.15 85); }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--text); font: 18px/1.6 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; background-color: var(--paper);
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 19px 19px; }
+  main { max-width: 700px; margin: 0 auto; padding: 44px 22px 64px; }
+  a { color: var(--ink); text-underline-offset: 3px; }
+  h1 { font-weight: normal; font-size: clamp(2rem, 7vw, 2.8rem); line-height: 1.15; margin: 0 0 12px; color: var(--ink); }
+  h2 { font-weight: normal; color: var(--ink); font-size: 1.45rem; margin: 46px 0 10px; }
+  .lead { font-size: 1.12rem; margin: 0 0 22px; }
+  .cta { display: inline-block; background: var(--ink); color: white; text-decoration: none; padding: 13px 22px; border-radius: 10px; font-size: 1.05rem; }
+  figure { margin: 22px 0; } figure img { width: 100%; height: auto; display: block; background: white; border: 1px solid var(--grid); }
+  figcaption { font-size: .85rem; color: var(--pencil); margin-top: 6px; }
+  .hraj { display: flex; align-items: center; gap: 12px; margin: 14px 0 4px; }
+  .hraj button { flex: none; width: 46px; height: 46px; border-radius: 50%; border: 2px solid var(--ink); background: var(--paper); color: var(--ink); cursor: pointer; display: grid; place-items: center; padding: 0; }
+  .hraj svg { width: 18px; height: 18px; fill: currentColor; }
+  .hraj .line { flex: 1; height: 2px; background: var(--ink); position: relative; }
+  .hraj .head { position: absolute; top: -5px; width: 15px; height: 11px; border-radius: 50%; background: var(--ink); transform: rotate(-22deg); left: 0; }
+  .hraj span { color: var(--pencil); font-size: .85rem; min-width: 5em; text-align: right; font-variant-numeric: tabular-nums; }
+  ol.steps { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+  ol.steps li { counter-increment: s; padding: 12px 0 12px 52px; position: relative; border-top: 1px solid var(--grid); }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 10px; width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--ink); color: var(--ink); display: grid; place-items: center; }
+  .mark { background: color-mix(in oklch, var(--doubt) 45%, transparent); padding: 0 4px; }
+  .small { font-size: .92rem; color: var(--pencil); }
+  .small li { margin: 4px 0; }
+  form { display: grid; gap: 14px; background: var(--paper); border: 2px solid var(--ink); border-radius: 12px; padding: 18px; margin-top: 12px; }
+  label { display: grid; gap: 4px; font-size: .92rem; color: var(--pencil); }
+  input, select, textarea { font: inherit; color: var(--text); background: white; border: 1.5px solid var(--grid); border-radius: 8px; padding: 9px 10px; }
+  input[type=file] { padding: 14px 10px; border-style: dashed; border-color: var(--ink); }
+  .check { display: flex; gap: 10px; align-items: flex-start; } .check input { width: 20px; height: 20px; margin-top: 3px; }
+  form button { font: inherit; background: var(--ink); color: white; border: 0; border-radius: 10px; padding: 14px; cursor: pointer; font-size: 1.05rem; }
+  form button:disabled { opacity: .6; }
+  #thumbs { display: flex; gap: 6px; flex-wrap: wrap; } #thumbs img { width: 64px; height: 84px; object-fit: cover; border: 1px solid var(--grid); }
+  #stav { min-height: 1.6em; color: var(--ink); margin: 0; }
+  .hp { position: absolute; left: -9999px; }
+  footer { margin-top: 50px; font-size: .85rem; color: var(--pencil); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hear the music in a handwritten score</h1>
+  <p class="lead">Send photos of the pages. You get back a recording, a clean score, and a page where the original and the transcription play bar by bar, with every unclear note marked so your family can check it.</p>
+  <a class="cta" href="#send">Send a manuscript</a>
+
+  <h2>It started with my grandfather's notebook</h2>
+  <p>My grandfather, Dr. Zoltán Rényi, wrote piano pieces in a squared school notebook: two waltzes titled Olga and Maria, two hymns, one waltz without a title. Six pages in ink. Nobody in my family reads music well enough to play them, and the phone apps that scan sheet music could not read his handwriting.</p>
+  <figure><img src="img/olga-line.webp" alt="A line of the handwritten Olga walzer" width="1400" height="190" loading="lazy">
+    <figcaption>One line of Olga walzer, as he wrote it.</figcaption></figure>
+  <p>So I had the pages read note by note, with every uncertain note written down instead of guessed silently: 97 of them. A second, closer reading cleared most of those and corrected seven bars. The thirteen that are left are marked on the page for anyone in the family who reads music.</p>
+  <div class="hraj"><button type="button" aria-label="Play Maria Walzer"><svg viewBox="0 0 18 18"><path d="M5 3 L15 9 L5 15 Z"/></svg></button><div class="line"><div class="head"></div></div><span>Maria Walzer</span></div>
+  <p class="small">Sampled grand piano playing exactly the notes on the page. The whole notebook, with each original bar shown over its transcription while it plays: <a href="https://renyi.dravec.org">renyi.dravec.org</a> (in Slovak; open "Porovnať s rukopisom").</p>
+
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><b>Photograph the pages</b> with your phone, in daylight, one page per photo.</li>
+    <li><b>We read and check them.</b> An AI model makes the first reading; every note it is unsure of is <span class="mark">marked</span> with the reason, and I check the result before it goes to you.</li>
+    <li><b>You get your study</b>: a link that plays on any phone, the score as a PDF, MP3 recordings, and the page where original and transcription play together. Family members can tap any marked bar and say "correct" or "wrong" from their phone.</li>
+  </ol>
+
+  <h2>The small print</h2>
+  <ul class="small">
+    <li>Free for the first ten manuscripts. No account, no subscription.</li>
+    <li>Piano music (two staves) works best. Choir parts, other instruments or old letters: send them anyway and I will tell you honestly what is possible.</li>
+    <li>About a week. If there is a date you need it for, say so.</li>
+    <li>Nothing is published without your permission. The files are yours.</li>
+    <li>The recording is a sampled piano playing the notes, not a performance.</li>
+    <li>The tool is open source: <a href="https://github.com/Chartres/manuscript-study">github.com/Chartres/manuscript-study</a>.</li>
+  </ul>
+
+  <h2 id="send">Send a manuscript</h2>
+  <form id="form">
+    <label>Photos of the pages (up to 12)<input type="file" name="pages" accept="image/*,application/pdf" multiple required></label>
+    <div id="thumbs"></div>
+    <label>What is it?
+      <select name="kind"><option value="piano">Piano music</option><option value="choir">Choir or church music</option><option value="other-music">Other music</option><option value="handwriting">Letters or other handwriting</option></select></label>
+    <label>Your email (only to send you the result)<input type="email" name="email" required autocomplete="email"></label>
+    <label>Your name (optional)<input name="name" autocomplete="name"></label>
+    <label>Is there an occasion coming? (optional)<input name="occasion" placeholder="e.g. grandmother's 80th birthday, 14 June"></label>
+    <label>Anything we should know (optional)<textarea name="message" rows="3" placeholder="Who wrote it, when, what you know about it"></textarea></label>
+    <label class="check"><input type="checkbox" name="example_ok" value="yes"><span>You may show it as an example (optional; otherwise it stays private)</span></label>
+    <input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit">Send</button>
+    <p id="stav" role="status"></p>
+  </form>
+
+  <footer>Made by Pavol, grandson of Dr. Zoltán Rényi. Questions: use the form above.</footer>
+</main>
+<script>
+  // the sample: loaded whole on first play (the host ignores Range requests, so a streamed MP3 cannot seek)
+  const a = new Audio(), btn = document.querySelector('.hraj button'), head = document.querySelector('.hraj .head'), lbl = document.querySelector('.hraj span');
+  const P = '<svg viewBox="0 0 18 18"><path d="M5 3 L15 9 L5 15 Z"/></svg>', S = '<svg viewBox="0 0 18 18"><rect x="4" y="3" width="3.5" height="12"/><rect x="10.5" y="3" width="3.5" height="12"/></svg>';
+  let src = null;
+  btn.onclick = async () => {
+    if (!src) { lbl.textContent = 'loading…'; src = URL.createObjectURL(await fetch('img/maria-walzer.mp3').then(r => r.blob())); a.src = src; }
+    a.paused ? a.play() : a.pause();
+  };
+  a.onplay = () => { btn.innerHTML = S; }; a.onpause = a.onended = () => { btn.innerHTML = P; };
+  a.ontimeupdate = () => { const f = a.currentTime / (a.duration || 1); head.style.left = `calc(${f * 100}% - 7px)`; lbl.textContent = `${Math.floor(a.currentTime / 60)}:${String(Math.floor(a.currentTime % 60)).padStart(2, '0')}`; };
+
+  // photos are shrunk on the phone to 2400 px before upload; PDFs and images the browser cannot decode go as they are
+  const form = document.getElementById('form'), stav = document.getElementById('stav'), thumbs = document.getElementById('thumbs');
+  const shrink = file => new Promise(res => {
+    if (!file.type.startsWith('image/')) return res(file);
+    const img = new Image(), url = URL.createObjectURL(file);
+    img.onload = () => {
+      const k = Math.min(1, 2400 / Math.max(img.width, img.height)), c = document.createElement('canvas');
+      c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(url);
+      c.toBlob(b => res(b ? new File([b], file.name.replace(/\.\w+$/, '') + '.jpg', { type: 'image/jpeg' }) : file), 'image/jpeg', 0.86);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); res(file); };
+    img.src = url;
+  });
+  form.pages.onchange = () => {
+    thumbs.innerHTML = '';
+    [...form.pages.files].slice(0, 12).forEach(f => { if (f.type.startsWith('image/')) { const i = new Image(); i.src = URL.createObjectURL(f); thumbs.appendChild(i); } });
+    if (form.pages.files.length > 12) stav.textContent = 'Only the first 12 pages will be sent.';
+  };
+  const MSG = { email: 'Please check your email address.', 'no-pages': 'Please add at least one photo.', 'too-many': 'Up to 12 pages, please.',
+    type: 'Photos (JPEG, PNG, HEIC) or PDF only, please.', size: 'One of the files is too large (8 MB per page).' };
+  form.onsubmit = async e => {
+    e.preventDefault();
+    const b = form.querySelector('button'); b.disabled = true; stav.textContent = 'Preparing the photos…';
+    try {
+      const fd = new FormData();
+      for (const [k, v] of new FormData(form)) if (k !== 'pages') fd.append(k, v);
+      for (const f of [...form.pages.files].slice(0, 12)) fd.append('pages', await shrink(f));
+      stav.textContent = 'Sending…';
+      const r = await fetch('/api/request', { method: 'POST', body: fd });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(MSG[j.error] || 'Sending failed. Please try again.');
+      form.reset(); thumbs.innerHTML = '';
+      stav.textContent = 'Thank you. The pages arrived; you will hear from me by email within a week.';
+    } catch (err) { stav.textContent = err.message; }
+    b.disabled = false;
+  };
+</script>
+</body>
+</html>
