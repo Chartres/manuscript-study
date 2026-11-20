@@ -1,5 +1,5 @@
 // POST multipart: name, email, kind, occasion, message, example_ok, web (honeypot), pages (files).
-import { check, telegram } from "../lib/intake.js";
+import { check, ping } from "../lib/intake.js";
 
 export async function onRequestPost({ request, env }) {
   let form; try { form = await request.formData(); } catch { return Response.json({ error: "form" }, { status: 400 }); }
@@ -16,7 +16,7 @@ export async function onRequestPost({ request, env }) {
   await env.REQUESTS.put(`req:${id}`, JSON.stringify(rec));
   const index = JSON.parse((await env.REQUESTS.get("index")) || "[]");
   await env.REQUESTS.put("index", JSON.stringify([id, ...index]));
-  await telegram(env, `Manuscript study — nová žiadosť: ${r.name || r.email}, ${files.length} str., ${r.kind}` +
+  await ping(env, `Manuscript study — nová žiadosť: ${r.name || r.email}, ${files.length} str., ${r.kind}` +
     `${r.occasion ? ", príležitosť: " + r.occasion : ""}\nhttps://manuscript-study.dravec.org/admin/`);
   return Response.json({ ok: true, id });
 }
