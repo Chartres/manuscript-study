@@ -18,7 +18,8 @@
   "kpi_source": "none",
   "north_star": null,
   "links": {
-    "repo": "https://github.com/Chartres/manuscript-study"
+    "repo": "https://github.com/Chartres/manuscript-study",
+    "live": "https://manuscript-study.dravec.org"
   },
   "decisions": [
     {
@@ -34,5 +35,5 @@
     "skill",
     "family"
   ],
-  "notes": "Prototype: renyi.pages.dev (repo ~/my-git/renyi), built 2026-11-19. Form chosen by Pavol 2026-11-19: open-source skill + template, $0 infra, no API calls. Probe approved 2026-11-19: open-source the pipeline, stage a post for r/ClaudeAI / Show HN; Pavol sends. Repo public 2026-11-19 (CI green). Probe pre-registered in docs/probe.md: PASS = ≥1 outside person tries it or asks for a study, or ≥3 comments describing a manuscript they hold, read 2026-11-28. Posts staged for Pavol: Show HN, then r/ClaudeAI."
+  "notes": "Prototype: renyi.pages.dev (repo ~/my-git/renyi), built 2026-11-19. Form chosen by Pavol 2026-11-19: open-source skill + template, $0 infra, no API calls. Probe approved 2026-11-19: open-source the pipeline, stage a post for r/ClaudeAI / Show HN; Pavol sends. Repo public 2026-11-19 (CI green). Probe pre-registered in docs/probe.md: PASS = ≥1 outside person tries it or asks for a study, or ≥3 comments describing a manuscript they hold, read 2026-11-28. Posts staged for Pavol: Show HN, then r/ClaudeAI. 2026-11-20: Pavol confirmed Dr. Zoltán Rényi is his grandfather. The concierge probe is live at manuscript-study.dravec.org (send photos, a free study for the first ten). Gate: ≥5 requests from outside the family within 14 days of the first post → build the phone app. Persona: me.dravec.org/manuscript-persona.html. Demand: 64 T1 signals."
 }
