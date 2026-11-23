@@ -1,0 +1,30 @@
+# Manuscript study
+
+> Send photos of a handwritten or old music manuscript and get back a study: a recording, a clean score, and a page where each bar of the original plays over the same bar of the transcription, with every unclear note marked. The first ten manuscripts are done free, with no account and no subscription. The site is in English; the tool behind it is open source.
+
+## What it is
+- A concierge offer from Pavol, who made the first study from his grandfather Dr. Zoltán Rényi's handwritten piano pieces (renyi.dravec.org, in Slovak).
+- An AI model makes the first reading of the pages; every note it is unsure of is marked with the reason, and a person checks the result before it is sent.
+- What you get: a link that plays on any phone, the score as a PDF, MP3 recordings, and the page where original and transcription play together. Family members can mark a doubtful bar "correct" or "wrong".
+- The recording is a sampled piano playing the notes, not a performance.
+
+## How to use it
+- Photograph the pages in daylight, one page per photo (up to 12), and send them with the form at https://manuscript-study.dravec.org/#send. An email address is needed only to send the result.
+- Piano music (two staves) works best. Choir parts, other instruments or old letters can be sent too; you get an honest answer about what is possible.
+- Expect about a week. Nothing is published without the sender's permission; the files stay theirs.
+
+## Terms
+- Free for the first ten manuscripts. No account, no subscription.
+
+## Do it yourself
+- The pipeline is an open-source Claude Code skill (MIT): transcription into ABC notation with doubts logged, abc2midi + fluidsynth for the sound, and a static page built with abcjs. No server and no API key.
+
+## Links
+- Send a manuscript: https://manuscript-study.dravec.org/
+- Example study: https://renyi.dravec.org
+- Source: https://github.com/Chartres/manuscript-study
+- Sitemap: https://manuscript-study.dravec.org/sitemap.xml
+
+## Contact
+- The form on https://manuscript-study.dravec.org/
+- Issues: https://github.com/Chartres/manuscript-study/issues
